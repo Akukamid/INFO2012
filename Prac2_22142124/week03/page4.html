@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Registration Portal | Luka's Web Project</title>
+  <!-- All four pages share the same external stylesheet. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- The skip link lets keyboard users jump past repeated navigation. -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header>
+    <img src="logo.png" alt="LD initials logo" width="48" height="48">
+    <h1>Member Registration Portal</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="page1.html">Home</a></li>
+        <li><a href="page2.html">About Me</a></li>
+        <li><a href="page3.html">Markup Guide</a></li>
+        <li><a href="page4.html" aria-current="page">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+  <hr>
+  <!-- Each document has one main content area. -->
+  <main id="main-content">
+    <h2>Complete Your Registration</h2>
+    <p id="form-note">This is a learning demonstration. Use fictional details and a made-up password.
+      Submitting valid input sends it to the external httpbin.org testing service and displays its response.
+      This website does not create member accounts.</p>
+    <p>Fields marked with an asterisk (*) are required.</p>
+    <!-- POST sends fields in the request body. HTTPS protects data in transit; neither makes a test service private. -->
+    <form action="https://httpbin.org/post" method="post" aria-describedby="form-note">
+      <fieldset>
+        <legend>Personal Details</legend>
+        <div class="form-row">
+<label for="full-name">Full name *</label><input type="text" id="full-name" name="fullName" autocomplete="name" required maxlength="100" placeholder=" ">
+</div>
+        <div class="form-row">
+<label for="email">Email address *</label><input type="email" id="email" name="email" autocomplete="email" required placeholder=" ">
+</div>
+        <div class="form-row">
+<label for="phone">Phone number *</label><input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9]{10}" placeholder="0400123456" aria-describedby="phone-hint" required>
+          <small id="phone-hint" class="hint">Enter exactly 10 digits, without spaces (exercise format).</small>
+</div>
+        <div class="form-row">
+<label for="dob">Date of birth *</label><input type="date" id="dob" name="dob" autocomplete="bday" required>
+</div>
+        <div class="form-row">
+<label for="gender">Gender (optional)</label><select id="gender" name="gender" aria-describedby="gender-hint">
+            <option value="">Prefer not to say</option>
+            <option value="female">Female</option>
+<option value="male">Male</option>
+            <option value="non-binary">Non-binary</option>
+<option value="self-described">Self-described</option>
+          </select>
+          <small id="gender-hint" class="hint">You may leave the default selection.</small>
+</div>
+      </fieldset>
+      <fieldset>
+        <legend>Account &amp; Plan</legend>
+        <div class="form-row">
+<label for="username">Username *</label><input type="text" id="username" name="username" autocomplete="username" minlength="3" maxlength="30" required placeholder=" ">
+</div>
+        <div class="form-row">
+<label for="password">Password *</label><input type="password" id="password" name="password" autocomplete="new-password" minlength="8" aria-describedby="password-hint" required placeholder=" ">
+          <small id="password-hint" class="hint">At least 8 characters for this exercise. Use a made-up password.</small>
+</div>
+        <p id="tier-label">Membership tier *</p>
+        <!-- One shared name makes these radio buttons a mutually exclusive group. -->
+        <div role="group" aria-labelledby="tier-label" class="choice-row">
+          <input type="radio" id="tier-free" name="membership" value="free" required checked>
+          <label for="tier-free">Free</label>
+          <input type="radio" id="tier-pro" name="membership" value="pro">
+          <label for="tier-pro">Pro</label>
+          <input type="radio" id="tier-enterprise" name="membership" value="enterprise">
+          <label for="tier-enterprise">Enterprise</label>
+        </div>
+        <div class="form-row">
+<label for="experience">Coding experience (years)</label><input type="range" id="experience" name="experience" min="0" max="10" step="1" value="0" aria-describedby="experience-hint">
+          <small id="experience-hint" class="hint">0 means beginner; the maximum is 10 years.</small>
+</div>
+      </fieldset>
+      <fieldset>
+        <legend>Preferences &amp; Terms</legend>
+        <div class="form-row">
+<label for="role">Current role *</label><select id="role" name="role" required>
+            <option value="">Select your role</option>
+            <option value="student">Full-Time Student</option>
+            <option value="frontend">Frontend Developer</option>
+            <option value="fullstack">Full-stack Engineer</option>
+            <option value="design">UI/UX Designer</option>
+            <option value="other">Other Professional</option>
+          </select>
+</div>
+        <p>Optional newsletters:</p>
+        <p class="choice-row"><input type="checkbox" id="news-web" name="newsletters" value="web">
+          <label for="news-web">Web development updates</label><br>
+          <input type="checkbox" id="news-security" name="newsletters" value="security">
+          <label for="news-security">Cybersecurity updates</label></p>
+        <div class="form-row">
+<label for="bio">Short bio (optional)</label><textarea id="bio" name="bio" rows="4" cols="40" maxlength="500" aria-describedby="bio-hint" placeholder=" "></textarea>
+          <small id="bio-hint" class="hint">Maximum 500 characters. Use fictional information.</small>
+</div>
+        <details>
+          <summary>Read the demonstration Terms of Service</summary>
+          <p>This form is provided for HTML practice only. It does not offer a membership or paid service.
+            Use fictional information and do not enter real passwords. A valid submission is sent to httpbin.org.</p>
+        </details>
+        <p class="choice-row"><input type="checkbox" id="terms" name="terms" value="accepted" required>
+          <label for="terms">I agree to the demonstration Terms of Service. *</label></p>
+      </fieldset>
+      <section aria-labelledby="privacy-heading">
+        <h3 id="privacy-heading">Data Protection Notice</h3>
+        <p>The form uses HTTPS and POST to send your test entries to httpbin.org. The response may display all
+          submitted fields, including the made-up password. The external service controls its own logging and retention.
+          Only submit fictional data. A real registration system also needs server-side validation, secure password
+          hashing and an appropriate privacy policy.</p>
+      </section>
+      <p class="form-actions"><button type="submit">Submit Test Registration</button>
+        <button type="reset">Clear Form</button></p>
+    </form>
+  </main>
+  <hr>
+  <footer>
+    <p>© 2026 Luka Dimanoski's Web Project. Page 4 of 4.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to My Website | Luka's Web Project</title>
+  <!-- All four pages share the same external stylesheet. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- The skip link lets keyboard users jump past repeated navigation. -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header>
+    <img src="logo.png" alt="LD initials logo" width="48" height="48">
+    <h1>Welcome to My Website</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="page1.html" aria-current="page">Home</a></li>
+        <li><a href="page2.html">About Me</a></li>
+        <li><a href="page3.html">Markup Guide</a></li>
+        <li><a href="page4.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+  <hr>
+  <!-- Each document has one main content area. -->
+  <main id="main-content">
+    <section aria-labelledby="welcome-heading">
+      <h2 id="welcome-heading">Home</h2>
+      <p>Welcome to my four-page INFS2012 website. This project demonstrates semantic HTML,
+        accessible navigation, common content elements and a registration form with HTML5 validation.</p>
+      <img src="logo.png" alt="LD initials, representing Luka Dimanoski" width="160" height="160">
+      <p>The website includes a personal profile, an HTML reference guide and a member registration portal.</p>
+    </section>
+    <section aria-labelledby="quick-links-heading">
+      <h2 id="quick-links-heading">Quick Navigation</h2>
+      <ul>
+        <li><a href="page2.html">Learn more about me</a></li>
+        <li><a href="page3.html">Explore HTML markup examples</a></li>
+        <li><a href="page4.html">Try the member registration form</a></li>
+      </ul>
+    </section>
+  </main>
+  <hr>
+  <footer>
+    <p>&copy; 2026 Luka Dimanoski's Web Project. Page 1 of 4.</p>
+  </footer>
+</body>
+</html>
