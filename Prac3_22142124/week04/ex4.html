@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Registration Portal | Luka's Web Project</title>
+  <!-- All four pages share the same external stylesheet. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- The skip link lets keyboard users jump past repeated navigation. -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header>
+    <img src="logo.png" alt="LD initials logo" width="48" height="48">
+    <h1>Member Registration Portal</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="ex1.html">Home</a></li>
+        <li><a href="ex2.html">About Me</a></li>
+        <li><a href="ex3.html">Markup Guide</a></li>
+        <li><a href="ex4.html" aria-current="page">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+  <hr>
+  <!-- Each document has one main content area. -->
+  <main id="main-content">
+    <h2>Complete Your Registration</h2>
+    <p id="form-note">Learning demo: use fictional details and a made-up password. JavaScript validates your entries and displays a local summary without sending them to a server.</p>
+    <p>Fields marked with an asterisk (*) are required.</p>
+    <noscript><p>Enable JavaScript to use this practical. Submission is disabled while the script is unavailable.</p></noscript>
+<form action="https://httpbin.org/post" method="post" aria-describedby="form-note" novalidate="" id="registration-form">
+      <fieldset>
+        <legend>Personal Details</legend>
+        <div class="form-row">
+<label for="full-name">Full name *</label><input type="text" id="full-name" name="fullName" autocomplete="name" required maxlength="100" placeholder=" ">
+</div>
+        <div class="form-row">
+<label for="email">Email address *</label><input type="email" id="email" name="email" autocomplete="email" required placeholder=" ">
+</div>
+        <div class="form-row">
+<label for="phone">Phone number *</label><input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9]{10}" placeholder="0400123456" aria-describedby="phone-hint" required>
+          <small id="phone-hint" class="hint">Enter exactly 10 digits, without spaces (exercise format).</small>
+</div>
+        <div class="form-row">
+<label for="dob">Date of birth *</label><input type="date" id="dob" name="dob" autocomplete="bday" required>
+</div>
+        <div class="form-row">
+<label for="gender">Gender (optional)</label><select id="gender" name="gender" aria-describedby="gender-hint">
+            <option value="">Prefer not to say</option>
+            <option value="female">Female</option>
+<option value="male">Male</option>
+            <option value="non-binary">Non-binary</option>
+<option value="self-described">Self-described</option>
+          </select>
+          <small id="gender-hint" class="hint">You may leave the default selection.</small>
+</div>
+      </fieldset>
+      <fieldset>
+        <legend>Account &amp; Plan</legend>
+        <div class="form-row">
+<label for="username">Username *</label><input type="text" id="username" name="username" autocomplete="username" minlength="3" maxlength="30" required placeholder=" ">
+</div>
+        <div class="form-row">
+<label for="password">Password *</label><input type="password" id="password" name="password" autocomplete="new-password" minlength="8" aria-describedby="password-hint" required placeholder=" ">
+          <span class="hint choice-row"><input type="checkbox" id="show-password"><label for="show-password">Show password</label></span><small id="password-hint" class="hint">At least 8 characters for this exercise. Use a made-up password.</small>
+</div>
+        <div class="form-row">
+<label for="confirm-password">Confirm password *</label><input type="password" id="confirm-password" name="confirmPassword" autocomplete="new-password" required minlength="8" placeholder=" " aria-describedby="confirm-hint"><small id="confirm-hint" class="hint">Must match the password above.</small>
+</div>
+<p id="tier-label">Membership tier *</p>
+        <!-- One shared name makes these radio buttons a mutually exclusive group. -->
+        <div role="group" aria-labelledby="tier-label" class="choice-row">
+          <input type="radio" id="tier-free" name="membership" value="free" required checked>
+          <label for="tier-free">Free</label>
+          <input type="radio" id="tier-pro" name="membership" value="pro">
+          <label for="tier-pro">Pro</label>
+          <input type="radio" id="tier-enterprise" name="membership" value="enterprise">
+          <label for="tier-enterprise">Enterprise</label>
+        </div>
+        <div class="form-row">
+<label for="experience">Coding experience (years)</label><input type="range" id="experience" name="experience" min="0" max="10" step="1" value="0" aria-describedby="experience-hint">
+          <small id="experience-hint" class="hint">0 means beginner; the maximum is 10 years.</small>
+</div>
+      </fieldset>
+      <fieldset>
+<legend>Study and Enrolment</legend>
+<div class="form-row">
+<label for="degree">Degree program *</label><select id="degree" name="degree" required><option value="">Select a degree</option>
+<option value="cyber">Bachelor of Cyber Security and Behaviour</option>
+<option value="computing">Bachelor of Computer Science</option>
+<option value="ict">Bachelor of Information and Communications Technology</option></select>
+</div>
+<p id="year-label">Year of study *</p>
+<div class="choice-row" role="group" aria-labelledby="year-label">
+<input type="radio" id="year-1" name="year" value="1" required><label for="year-1">Year 1</label> <input type="radio" id="year-2" name="year" value="2"><label for="year-2">Year 2</label> <input type="radio" id="year-3" name="year" value="3"><label for="year-3">Year 3</label> <input type="radio" id="year-4" name="year" value="4"><label for="year-4">Year 4+</label>
+</div>
+<p id="skills-label">Skills (optional)</p>
+<div class="choice-row" role="group" aria-labelledby="skills-label">
+<input type="checkbox" id="skill-html" name="skills" value="HTML"><label for="skill-html">HTML</label> <input type="checkbox" id="skill-css" name="skills" value="CSS"><label for="skill-css">CSS</label> <input type="checkbox" id="skill-js" name="skills" value="JavaScript"><label for="skill-js">JavaScript</label> <input type="checkbox" id="skill-security" name="skills" value="Cybersecurity"><label for="skill-security">Cybersecurity</label>
+</div>
+<h3>Choose example subjects</h3>
+<p class="hint">The fees ($1,192 each), credit points and options below are demonstration data, not official course advice or current university fees.</p>
+<p class="choice-row"><input type="checkbox" id="subject-1" name="subjects" value="INFS2012" data-cost="1192" data-cp="10"><label for="subject-1">INFS2012: Digital Technologies and Security</label></p>
+<p class="choice-row"><input type="checkbox" id="subject-2" name="subjects" value="COMP1005" data-cost="1192" data-cp="10"><label for="subject-2">COMP1005: Programming Fundamentals</label></p>
+<p class="choice-row"><input type="checkbox" id="subject-3" name="subjects" value="COMP2004" data-cost="1192" data-cp="10"><label for="subject-3">COMP2004: Networking</label></p>
+<p class="choice-row"><input type="checkbox" id="subject-4" name="subjects" value="INFO2008" data-cost="1192" data-cp="10"><label for="subject-4">INFO2008: Incident Response and Risk Management</label></p>
+<p class="choice-row"><input type="checkbox" id="subject-5" name="subjects" value="INFO3002" data-cost="1192" data-cp="10"><label for="subject-5">INFO3002: Ethical Hacking</label></p>
+<div class="fee-totals" aria-live="polite">
+<p>Subjects selected: <span id="subject-count">0</span></p>
+<p>Credit points: <span id="credit-points">0</span></p>
+<p>Enrolment fee: <span id="enrolment-fee">$0.00</span></p>
+</div>
+<div class="form-row">
+<label for="notes">Notes (optional)</label><textarea id="notes" name="notes" rows="3" cols="30" aria-describedby="notes-hint notes-count" placeholder=" "></textarea><small id="notes-hint" class="hint">Suggested length: 50 characters. The counter turns red at 50; typing beyond 50 is allowed in this exercise.</small><span id="notes-count" class="hint">0 / 50</span>
+</div>
+</fieldset>
+<fieldset>
+        <legend>Preferences &amp; Terms</legend>
+        <div class="form-row">
+<label for="role">Current role *</label><select id="role" name="role" required>
+            <option value="">Select your role</option>
+            <option value="student">Full-Time Student</option>
+            <option value="frontend">Frontend Developer</option>
+            <option value="fullstack">Full-stack Engineer</option>
+            <option value="design">UI/UX Designer</option>
+            <option value="other">Other Professional</option>
+          </select>
+</div>
+        <p>Optional newsletters:</p>
+        <p class="choice-row"><input type="checkbox" id="news-web" name="newsletters" value="web">
+          <label for="news-web">Web development updates</label><br>
+          <input type="checkbox" id="news-security" name="newsletters" value="security">
+          <label for="news-security">Cybersecurity updates</label></p>
+        <div class="form-row">
+<label for="bio">Short bio (optional)</label><textarea id="bio" name="bio" rows="4" cols="40" maxlength="500" aria-describedby="bio-hint" placeholder=" "></textarea>
+          <small id="bio-hint" class="hint">Maximum 500 characters. Use fictional information.</small>
+</div>
+        <details>
+          <summary>Read the demonstration Terms of Service</summary>
+          <p>This demonstration creates a local review summary, not a member account. Use fictional information and a made-up password.</p>
+        </details>
+        <p class="choice-row"><input type="checkbox" id="terms" name="terms" value="accepted" required>
+          <label for="terms">I agree to the demonstration Terms of Service. *</label></p>
+      </fieldset>
+      <section aria-labelledby="privacy-heading">
+        <h3 id="privacy-heading">Data Protection Notice</h3>
+        <p>With the supplied JavaScript running, submitting displays a local summary and sends no form data. Passwords are masked in that summary, but the original input value remains readable through browser tools. Client-side checks can be bypassed; a real service also needs server-side validation, secure authentication and password storage.</p>
+      </section>
+      <p class="form-actions"><button type="submit" disabled>Show Registration Summary</button>
+        <button type="reset">Clear Form</button></p>
+    </form>
+  </main>
+  <hr>
+  <footer>
+    <p>© 2026 Luka Dimanoski's Web Project. Page 4 of 4.</p>
+  </footer>
+<script src="js/form.js"></script>
+</body>
+</html>
