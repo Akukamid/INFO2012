@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Luka's Web Project</title>
+</head>
+<body>
+  <!-- The skip link lets keyboard users jump past repeated navigation. -->
+  <a href="#main-content">Skip to main content</a>
+  <header>
+    <h1>About Me</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="page1.html">Home</a></li>
+        <li><a href="page2.html" aria-current="page">About Me</a></li>
+        <li><a href="page3.html">Markup Guide</a></li>
+        <li><a href="page4.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+  <hr>
+  <!-- Each document has one main content area. -->
+  <main id="main-content">
+    <article aria-labelledby="bio-heading">
+      <h2 id="bio-heading">Luka Dimanoski: Developer Profile</h2>
+      <img src="logo.png" alt="Initials avatar placeholder for Luka Dimanoski" width="160" height="160">
+      <p>I am studying a Bachelor of Cyber Security and Behaviour at Western Sydney University.
+        My interests include penetration testing, security operations and digital forensics.
+        Through university practicals and my Gridware internship, I have explored security tools,
+        risk management and practical problem solving. In INFS2012, I am learning how HTML,
+        CSS and JavaScript work together to build accessible and secure web applications.</p>
+      <blockquote cite="https://www.w3.org/mission/accessibility/">
+        <p>The power of the Web is in its universality.</p>
+      </blockquote>
+      <p>Quotation by Tim Berners-Lee, from <cite><a href="https://www.w3.org/mission/accessibility/">W3C: Accessibility</a></cite>.</p>
+      <section aria-labelledby="timeline-heading">
+        <h3 id="timeline-heading">Learning and Career Timeline</h3>
+        <ol>
+          <li>Study cybersecurity at Western Sydney University and develop programming and networking foundations.</li>
+          <li>Practise security monitoring and vulnerability assessment in university labs.</li>
+          <li>Gain internship experience at Gridware across cybersecurity practice areas.</li>
+          <li>Work towards the CJCA certification (in progress).</li>
+          <li>Build a four-page HTML website and extend it with CSS and JavaScript during INFS2012.</li>
+        </ol>
+      </section>
+      <section aria-labelledby="skills-heading">
+        <h3 id="skills-heading">Skill Matrix</h3>
+        <p>These are demonstration values for this exercise. Replace them with your own honest self-assessment.</p>
+        <!-- progress represents task completion; meter represents a measured value in a known range. -->
+        <p><label for="html-progress">HTML5 practice completion: 60%</label>
+          <progress id="html-progress" value="60" max="100">60%</progress></p>
+        <p><label for="css-progress">CSS3 practice completion: 30%</label>
+          <progress id="css-progress" value="30" max="100">30%</progress></p>
+        <p><label for="js-meter">JavaScript ES6+ confidence: 25%</label>
+          <meter id="js-meter" min="0" max="100" value="25">25%</meter></p>
+        <p><label for="accessibility-meter">Accessibility (a11y) confidence: 40%</label>
+          <meter id="accessibility-meter" min="0" max="100" value="40">40%</meter></p>
+      </section>
+      <section aria-labelledby="hobbies-heading">
+        <h3 id="hobbies-heading">Hobbies and Community Interests</h3>
+        <ul>
+          <li>Cybersecurity labs and capture-the-flag challenges</li>
+          <li>Gym training</li>
+          <li>Playing guitar and listening to music</li>
+          <li>Learning Macedonian</li>
+        </ul>
+      </section>
+      <section aria-labelledby="contact-heading">
+        <h3 id="contact-heading">Contact and Office Hours</h3>
+        <p>The contact address and availability below are placeholders for this student exercise.</p>
+        <address>
+          Luka Dimanoski<br>
+          Email: <a href="mailto:luka@example.com">luka@example.com</a><br>
+          Office hours: by appointment (sample availability).
+        </address>
+      </section>
+    </article>
+  </main>
+  <hr>
+  <footer>
+    <p>&copy; 2026 Luka Dimanoski's Web Project. Page 2 of 4.</p>
+  </footer>
+</body>
+</html>
